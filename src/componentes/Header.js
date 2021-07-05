@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './img/20-gon-dissection-random.svg'
+import Logo from './img/world-logo.png'
 
 export default function Header(){
     return(
