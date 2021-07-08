@@ -1,7 +1,9 @@
 import React from 'react'
 
 export default function Dados(props){    
+    // ano inicial
     let descoberta = 1522
+    // ano final (atual)
     let atual = 2021
 
     const cancelarAction = (obj) =>{

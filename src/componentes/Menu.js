@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-export default function Menu(){
+export default function Menu(props){
     const [color, setColor] = useState(1)
 
     const darkblue = {color: "#61dafb", backgroundColor: "darkblue"}
@@ -27,7 +27,7 @@ export default function Menu(){
             <div className="menu-links">
                 <a href="#">Home</a>
                 <a href="#">Lista</a>
-                <a href="#">Sobre nós</a>       
+                <a href="#">Sobre nós</a>                         
             </div>            
             <button onClick={()=>controlColors(color+1)} style={greenblack}>Color</button>     
         </nav>
