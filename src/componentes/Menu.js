@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import {NavLink} from 'react-router-dom';
+import {makeStyles} from '@material-ui/core/styles'
 
 export default function Menu(props){
     const [color, setColor] = useState(1)
@@ -18,16 +20,23 @@ export default function Menu(props){
         setColor(color)
         if(color > 3){
             setColor(1)
-        }                
-        
+        }                        
     }
+
+    const menuStyles = makeStyles((theme) => ({
+        root: {            
+            color: 'white !important',
+        },
+    }))
+    
+    const linkStyle = menuStyles()
     
     return(        
         <nav className="App-menu" style={changeColor(color)}>
             <div className="menu-links">
-                <a href="#">Home</a>
-                <a href="#">Lista</a>
-                <a href="#">Sobre nós</a>                         
+                <NavLink to="/" exact activeClassName={linkStyle.root}>Home</NavLink>
+                <NavLink to="/lista" activeClassName={linkStyle.root}>Lista</NavLink>
+                <NavLink to="/sobre" activeClassName={linkStyle.root}>Sobre nós</NavLink>                         
             </div>            
             <button onClick={()=>controlColors(color+1)} style={greenblack}>Color</button>     
         </nav>

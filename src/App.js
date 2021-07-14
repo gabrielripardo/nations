@@ -8,29 +8,32 @@ import Numero from './componentes/Numero'
 import Home from './componentes/Pages/Home'
 import Lista from './componentes/Pages/Lista'
 import About from './componentes/Pages/About'
+import {BrowserRouter} from 'react-router-dom'
+import Rotas from './rotas'
 
 export default function App(){  
 
   const [money, setMoney] = useState(8717.19) //PIB do Brasil
-  const [page, setPage] = useState(0)
+  // const [page, setPage] = useState(0)
 
 
-  const pageCurrent = (page) => {
-    if(page == 1){
-      return <Lista/>
-    }else if(page == 2){
-      return <About/>
-    }else{
-      return <Home/>
-    }
-  }
+  // const pageCurrent = (page) => {
+  //   if(page == 1){
+  //     return <Lista/>
+  //   }else if(page == 2){
+  //     return <About/>
+  //   }else{
+  //     return <Home/>
+  //   }
+  // }
 
-  return(        
-    <section>      
+  return(            
+    <BrowserRouter>      
       <Numero money={money} setMoney={setMoney}/>            
       <Header/>   
-      <Menu page={page} setPage={setPage} /> {/*  invoca o componente criado em outro arquivo js              */}      
-      {pageCurrent(page)}
-    </section>
+      <Menu/> {/*  invoca o componente criado em outro arquivo js              */}      
+      <Rotas/>
+      {/* {pageCurrent(page)} */}
+    </BrowserRouter>          
   )
 }
